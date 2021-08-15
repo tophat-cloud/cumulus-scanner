@@ -16,4 +16,4 @@ class mushroom_spores():
         self.search_page_map()
 
     def search_page_map(self):
-        while True:
+        pass
