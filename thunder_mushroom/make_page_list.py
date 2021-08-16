@@ -1,7 +1,7 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
 
-class make_page_list():
+class make_page_list:
 
     def __init__(self, url):
         self.base_url = url
@@ -11,6 +11,7 @@ class make_page_list():
         webdriver_options.add_argument('disable-gpu')
         self.driver = webdriver.Chrome("./chromedriver.exe", options = webdriver_options)
         # self.driver = wevdriver.Chrome("./chromedriver", options = webdriver_options)
+        self.find_href(url)
 
     def find_href(self, url):
         self.driver.get(url)
