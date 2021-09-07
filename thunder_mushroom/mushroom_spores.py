@@ -1,6 +1,5 @@
 from selenium import webdriver
 from make_page_list import make_page_list
-from bs4 import BeautifulSoup
 import re
 import requests
 
@@ -17,8 +16,8 @@ class mushroom_spores:
         webdriver_options = webdriver.ChromeOptions()
         webdriver_options.add_argument('headless')
         webdriver_options.add_argument('disable-gpu')
-        self.driver = webdriver.Chrome("./chromedriver.exe", options=webdriver_options)  # in win10
-        # self.driver = webdriver.Chrome("./chromedriver", options = webdriver_options) #in linux
+        # self.driver = webdriver.Chrome("./chromedriver.exe", options=webdriver_options)  # in win10
+        self.driver = webdriver.Chrome("./chromedriver", options = webdriver_options) #in linux
         self.page_list(self.url)
 
     def page_list(self, url):

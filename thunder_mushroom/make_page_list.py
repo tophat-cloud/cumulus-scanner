@@ -9,8 +9,8 @@ class make_page_list:
         webdriver_options = webdriver.ChromeOptions()
         webdriver_options.add_argument('headless')
         webdriver_options.add_argument('disable-gpu')
-        self.driver = webdriver.Chrome("./chromedriver.exe", options = webdriver_options)
-        # self.driver = webdriver.Chrome("./chromedriver", options = webdriver_options)
+        # self.driver = webdriver.Chrome("./chromedriver.exe", options = webdriver_options)
+        self.driver = webdriver.Chrome("./chromedriver", options = webdriver_options)
         self.find_href(url)
 
     def find_href(self, url):
