@@ -16,9 +16,10 @@ class mushroom_spore:
         webdriver_options = webdriver.ChromeOptions()
         webdriver_options.add_argument('headless')
         webdriver_options.add_argument('disable-gpu')
-        # self.driver = webdriver.Chrome("./chromedriver.exe", options=webdriver_options)  # in win10
+        #self.driver = webdriver.Chrome("./chromedriver.exe", options=webdriver_options)  # in win10
         self.driver = webdriver.Chrome("./chromedriver", options = webdriver_options) #in linux
         self.page_list(self.url)
+        self.make_page_html_source()
 
     def page_list(self, url):
 
@@ -41,12 +42,14 @@ class mushroom_spore:
         for page_html in self.list_of_html_source:
 
             if regex_html.search(page_html):
+                print("a")
                 body = {"thunder_name": "unnecessary comment", "priority": 1,
                         "url": self.list_of_page[self.list_of_html_source.index(page_html)],
                         "project": "KMsB9W4hZCejJ6D1fiESP"}
                 request = requests.post(url="http://api.cumulus.tophat.cloud/thunder/create", json=body)
 
             if regex_javascript.search(page_html):
+                print("a")
                 body = {"thunder_name": "unnecessary comment", "priority": 1,
                         "url": self.list_of_page[self.list_of_html_source.index(page_html)],
                         "project": "KMsB9W4hZCejJ6D1fiESP"}
@@ -69,7 +72,7 @@ class mushroom_spore:
         for cheat_value in directory_cheat_sheet:
             for num in range(1,5):
                 new_url = url+cheat_value*num
-                print(new_url)
+
                 re = requests.get(new_url)
                 if re.status_code == 200:
                     self.driver.get(new_url)
@@ -85,3 +88,5 @@ class mushroom_spore:
         self.check_unnecessary_comment()
 
 
+a = mushroom_spore("http://tophatplayground.wookingwoo.com/")
+a.run_all()
