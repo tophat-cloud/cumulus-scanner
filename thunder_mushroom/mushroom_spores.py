@@ -34,7 +34,7 @@ class mushroom_spores:
 
     def check_unnecessary_comment(self):
 
-        regex_html = re.compile(r'<--([^"]*)-->')
+        regex_html = re.compile(r'<!--([^"]*)-->')
         regex_javascript = re.compile(r'/*')
         regex_javascript_one = re.compile(r'.?.?.?.?.?.?.?//')
 
