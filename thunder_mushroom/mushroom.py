@@ -1,7 +1,7 @@
 import time
 import requests
 import schedule
-from thunder_mushroom.mushroom_spores import mushroom_spores
+from mushroom_spores import mushroom_spore
 
 url_list = ["http://tophatplayground.wookingwoo.com/"]
 
@@ -23,7 +23,7 @@ def run():
     global url_list
     mushroom_list = []
     for url in url_list:
-        mushroom = mushroom_spores(url)
+        mushroom = mushroom_spore(url)
         mushroom_list.append(mushroom)
 
     for mushroom in mushroom_list:

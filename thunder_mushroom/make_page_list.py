@@ -1,7 +1,7 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
 
-class make_page_list:
+class make_page:
 
     def __init__(self, url):
         self.base_url = url
@@ -9,8 +9,8 @@ class make_page_list:
         webdriver_options = webdriver.ChromeOptions()
         webdriver_options.add_argument('headless')
         webdriver_options.add_argument('disable-gpu')
-        # self.driver = webdriver.Chrome("./chromedriver.exe", options = webdriver_options)
-        self.driver = webdriver.Chrome("./chromedriver", options = webdriver_options)
+        self.driver = webdriver.Chrome("./chromedriver.exe", options = webdriver_options)
+        # self.driver = webdriver.Chrome("./chromedriver", options = webdriver_options)
         self.find_href(url)
 
     def find_href(self, url):

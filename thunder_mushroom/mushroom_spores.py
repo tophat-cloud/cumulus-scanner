@@ -1,10 +1,10 @@
 from selenium import webdriver
-from make_page_list import make_page_list
+from make_page_list import make_page
 import re
 import requests
 
 
-class mushroom_spores:
+class mushroom_spore:
 
     def __init__(self, url):
         if url[-1] == "/":
@@ -16,13 +16,13 @@ class mushroom_spores:
         webdriver_options = webdriver.ChromeOptions()
         webdriver_options.add_argument('headless')
         webdriver_options.add_argument('disable-gpu')
-        # self.driver = webdriver.Chrome("./chromedriver.exe", options=webdriver_options)  # in win10
-        self.driver = webdriver.Chrome("./chromedriver", options = webdriver_options) #in linux
+        self.driver = webdriver.Chrome("./chromedriver.exe", options=webdriver_options)  # in win10
+        # self.driver = webdriver.Chrome("./chromedriver", options = webdriver_options) #in linux
         self.page_list(self.url)
 
     def page_list(self, url):
 
-        page_list = make_page_list(url)
+        page_list = make_page(url)
         self.list_of_page = page_list.get_url_list()
 
     def make_page_html_source(self):
