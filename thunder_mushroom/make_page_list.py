@@ -25,7 +25,7 @@ class make_page_list:
             for dept1 in tag:
                 tmp = dept1.get("href")
                 if tmp != None:
-                    if tmp != "#" and ";" not in tmp:
+                    if (tmp != "#" and ";" not in tmp) and tmp != "/":
                         if "http" not in tmp:
                             tmp = self.base_url + tmp
                             if tmp not in self.list_url:

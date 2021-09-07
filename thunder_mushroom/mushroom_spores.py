@@ -1,4 +1,3 @@
-import selenium
 from selenium import webdriver
 from make_page_list import make_page_list
 from bs4 import BeautifulSoup
@@ -20,7 +19,7 @@ class mushroom_spores:
         webdriver_options.add_argument('disable-gpu')
         self.driver = webdriver.Chrome("./chromedriver.exe", options=webdriver_options)  # in win10
         # self.driver = webdriver.Chrome("./chromedriver", options = webdriver_options) #in linux
-        self.page_list(url)
+        self.page_list(self.url)
 
     def page_list(self, url):
 
@@ -43,22 +42,25 @@ class mushroom_spores:
         for page_html in self.list_of_html_source:
 
             if regex_html.search(page_html):
-                # api 전송
-                print("주석발견")
-                pass
+                body = {"thunder_name": "unnecessary comment", "priority": 1,
+                        "url": self.list_of_page[self.list_of_html_source.index(page_html)],
+                        "project": "KMsB9W4hZCejJ6D1fiESP"}
+                request = requests.post(url="http://api.cumulus.tophat.cloud/thunder/create", json=body)
 
             if regex_javascript.search(page_html):
-                # api 전송
-                print("주석발견")
-                pass
+                body = {"thunder_name": "unnecessary comment", "priority": 1,
+                        "url": self.list_of_page[self.list_of_html_source.index(page_html)],
+                        "project": "KMsB9W4hZCejJ6D1fiESP"}
+                request = requests.post(url="http://api.cumulus.tophat.cloud/thunder/create", json=body)
 
             maybe_comments = regex_javascript_one.findall(page_html)
 
             for maybe_comment in maybe_comments:
                 if len(maybe_comment) == 2 or ("http:" not in maybe_comment or "href" not in maybe_comment):
-                    # api 전송
-                    print("주석발견")
-                    pass
+                    body = {"thunder_name": "unnecessary comment", "priority": 1,
+                            "url": self.list_of_page[self.list_of_html_source.index(page_html)],
+                            "project": "KMsB9W4hZCejJ6D1fiESP"}
+                    request = requests.post(url="http://api.cumulus.tophat.cloud/thunder/create", json=body)
 
     def directory_travelser(self):
         url = self.url+"/"
@@ -74,8 +76,13 @@ class mushroom_spores:
                     self.driver.get(new_url)
                     new_code = self.driver.page_source
                     if new_code == main_code:
-                        # 취약점 발견
-                        print("발견")
+                        body = {"thunder_name": "directory travelser", "priority": 2,
+                                "url": self.url,
+                                "project": "KMsB9W4hZCejJ6D1fiESP"}
+                        request = requests.post(url="http://api.cumulus.tophat.cloud/thunder/create", json=body)
 
+    def run_all(self):
+        self.directory_travelser()
+        self.check_unnecessary_comment()
 
 
