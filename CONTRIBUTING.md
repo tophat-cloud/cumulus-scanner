@@ -29,10 +29,10 @@ pip install -r requirements.txt
 
 ## Considerations Before Sending Your First PR
 ```
-todo
+
 ```
 
 ## Publishing a Release
 ```
-todo
+
 ```
