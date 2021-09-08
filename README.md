@@ -32,7 +32,7 @@ python3 mushroom.py
 
 
 ## Contents
-- [Culumus Dashboard](https://cumulus.tophat.cloud/)
+- [Cumulus Dashboard](https://cumulus.tophat.cloud/)
 - [Contributing]()
 
 ## Author
