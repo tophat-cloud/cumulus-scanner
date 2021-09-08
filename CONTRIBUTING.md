@@ -16,7 +16,7 @@ Let's contribute and be a cumulus family!
 
 ## Environment
 
-- python3.8^
+- python3.8
 
 
 ## Setup
