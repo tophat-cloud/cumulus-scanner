@@ -40,14 +40,11 @@ class mushroom_spore:
         regex_javascript_one = re.compile(r'.?.?.?.?.?.?.?//')
 
         for page_html in self.list_of_html_source:
-
-            if regex_html.search(page_html):
-                body = {"thunder_name": "unnecessary comment", "priority": 1,
-                        "url": self.list_of_page[self.list_of_html_source.index(page_html)],
-                        "project": "KMsB9W4hZCejJ6D1fiESP"}
-                request = requests.post(url="https://api.cumulus.tophat.cloud/thunder/create", json=body)
+            print("Check unnecessary comment => " + self.list_of_page[self.list_of_html_source.index(page_html)])
 
             if regex_javascript.search(page_html):
+                print("regex javascript detected!["+self.list_of_page[self.list_of_html_source.index(page_html)]+"]")
+
                 body = {"thunder_name": "unnecessary comment", "priority": 1,
                         "url": self.list_of_page[self.list_of_html_source.index(page_html)],
                         "project": "KMsB9W4hZCejJ6D1fiESP"}
@@ -64,6 +61,7 @@ class mushroom_spore:
 
     def directory_travelser(self):
         url = self.url+"/"
+        print("Check directory travelser => " + url)
         self.driver.get(url)
         main_code = self.driver.page_source
         directory_cheat_sheet = ["%2e%2e%2f", "%2e%2e/", "..%2f", "%2e%2e%5c", "%2e%2e\\", "..%5c", "%252e%252e%255c", "..%255c"]
@@ -84,5 +82,4 @@ class mushroom_spore:
     def run_all(self):
         self.directory_travelser()
         self.check_unnecessary_comment()
-
-
+        print("Finish Scan url => " + self.url)
