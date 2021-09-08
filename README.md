@@ -15,6 +15,9 @@
 
 The official Cumulus Attacker for python3
 
+## Environment
+    Ubuntu 20.04
+    Python3.8
 ## Installation
 
 Run normally:
