@@ -88,5 +88,3 @@ class mushroom_spore:
         self.check_unnecessary_comment()
 
 
-a = mushroom_spore("http://tophatplayground.wookingwoo.com/")
-a.run_all()
