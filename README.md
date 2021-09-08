@@ -1,4 +1,5 @@
 
+
 <p align="center">
   <p align="center">
     <a href="https://cumulus.tophat.cloud" target="_blank">
@@ -29,13 +30,23 @@ pip3 install -r requirements.txt
 cd tophat-cumulus-attack/thunder_mushroom
 python3 mushroom.py
 ```
-
+## Types of weakness that can be found
+- Check Unnecessary Comment
+- Directory Travelser
 
 ## Contents
 - [Cumulus Dashboard](https://cumulus.tophat.cloud/)
 - [Contributing]()
 
 ## Author
-```
-todo
-```
+<p align="center">
+  <p align="center">
+    <a href="https://github.com/tophat-cloud" target="_blank">
+      <img src="https://jinui.s3.ap-northeast-2.amazonaws.com/tophat/tophat.png" alt="TopHat" height="100">
+    </a>
+  </p>
+
+  <p align="center">
+    <a href="http://github.com/lookuss" target="_blank">@lookuss</a>&nbsp from <strong>TopHat</strong>
+  </p>
+</p>
