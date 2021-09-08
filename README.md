@@ -11,9 +11,9 @@
   </p>
 </p>
 
-# Cumulus Attacker for Python3
+# Cumulus Scanner for Python3
 
-The official Cumulus Attacker for python3
+The official Cumulus Scanner for python3
 
 ## Environment
     Ubuntu 20.04
@@ -28,9 +28,9 @@ sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable
 sudo apt-get update
 sudo apt-get install google-chrome-stable
 
-git clone https://github.com/tophat-cloud/tophat-cumulus-attack.git
+git clone https://github.com/tophat-cloud/cumulus-scanner.git
 pip3 install -r requirements.txt
-cd tophat-cumulus-attack/thunder_mushroom
+cd cumulus-scanner/thunder_mushroom
 python3 mushroom.py
 ```
 ## Types of weakness that can be found
@@ -39,7 +39,7 @@ python3 mushroom.py
 
 ## Contents
 - [Cumulus Dashboard](https://cumulus.tophat.cloud/)
-- [Contributing](https://github.com/tophat-cloud/tophat-cumulus-attack/blob/master/CONTRIBUTING.md)
+- [Contributing](https://github.com/tophat-cloud/cumulus-scanner/blob/master/CONTRIBUTING.md)
 
 ## Author
 <p align="center">
