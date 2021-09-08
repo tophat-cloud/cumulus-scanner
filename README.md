@@ -10,9 +10,9 @@
   </p>
 </p>
 
-# Culumus Attacker for Python3
+# Cumulus Attacker for Python3
 
-The official Culumus Attacker for python3
+The official Cumulus Attacker for python3
 
 ## Installation
 
@@ -24,9 +24,9 @@ sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable
 sudo apt-get update
 sudo apt-get install google-chrome-stable
 
-git clone https://github.com/tophat-cloud/tophat-culumus-attack.git
+git clone https://github.com/tophat-cloud/tophat-cumulus-attack.git
 pip3 install -r requirements.txt
-cd tophat-culumus-attack/thunder_mushroom
+cd tophat-cumulus-attack/thunder_mushroom
 python3 mushroom.py
 ```
 
