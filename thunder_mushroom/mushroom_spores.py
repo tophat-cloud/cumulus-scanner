@@ -46,14 +46,14 @@ class mushroom_spore:
                 body = {"thunder_name": "unnecessary comment", "priority": 1,
                         "url": self.list_of_page[self.list_of_html_source.index(page_html)],
                         "project": "KMsB9W4hZCejJ6D1fiESP"}
-                request = requests.post(url="http://api.cumulus.tophat.cloud/thunder/create", json=body)
+                request = requests.post(url="https://api.cumulus.tophat.cloud/thunder/create", json=body)
 
             if regex_javascript.search(page_html):
                 print("a")
                 body = {"thunder_name": "unnecessary comment", "priority": 1,
                         "url": self.list_of_page[self.list_of_html_source.index(page_html)],
                         "project": "KMsB9W4hZCejJ6D1fiESP"}
-                request = requests.post(url="http://api.cumulus.tophat.cloud/thunder/create", json=body)
+                request = requests.post(url="https://api.cumulus.tophat.cloud/thunder/create", json=body)
 
             maybe_comments = regex_javascript_one.findall(page_html)
 
@@ -62,7 +62,7 @@ class mushroom_spore:
                     body = {"thunder_name": "unnecessary comment", "priority": 1,
                             "url": self.list_of_page[self.list_of_html_source.index(page_html)],
                             "project": "KMsB9W4hZCejJ6D1fiESP"}
-                    request = requests.post(url="http://api.cumulus.tophat.cloud/thunder/create", json=body)
+                    request = requests.post(url="https://api.cumulus.tophat.cloud/thunder/create", json=body)
 
     def directory_travelser(self):
         url = self.url+"/"
@@ -81,7 +81,7 @@ class mushroom_spore:
                         body = {"thunder_name": "directory travelser", "priority": 2,
                                 "url": self.url,
                                 "project": "KMsB9W4hZCejJ6D1fiESP"}
-                        request = requests.post(url="http://api.cumulus.tophat.cloud/thunder/create", json=body)
+                        request = requests.post(url="https://api.cumulus.tophat.cloud/thunder/create", json=body)
 
     def run_all(self):
         self.directory_travelser()
