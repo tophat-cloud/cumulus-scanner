@@ -1,8 +1,41 @@
-# tophat-culumus-attack
 
-공격 서버에 뛰울 프로그램
-메인 프로그램인 mushroom.py를 실행시키면 00시마다 순차적으로 취약점 진단 진행
+<p align="center">
+  <p align="center">
+    <a href="https://cumulus.tophat.cloud" target="_blank">
+      <img src="https://jinui.s3.ap-northeast-2.amazonaws.com/tophat/logo.png" alt="Sentry" height="72">
+    </a>
+  </p>
+  <p align="center">
+    Application Weakness Monitoring Software
+  </p>
+</p>
 
-현재는 url을 지정 해두었지만 나중에 데이터 파일로 하여금 저장 하면서 불러올 예정
+# Culumus Attacker for Python3
 
-취약점 진단이 아직 몇가지 없지만 추후에 추가할 예정
+The official Culumus Attacker for python3
+
+## Installation
+
+Run normally:
+
+```
+#install chrome
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+sudo apt-get update
+sudo apt-get install google-chrome-stable
+
+git clone https://github.com/tophat-cloud/tophat-culumus-attack.git
+pip3 install -r requirements.txt
+cd tophat-culumus-attack/thunder_mushroom
+python3 mushroom.py
+```
+
+
+## Contents
+- [Culumus Dashboard](https://cumulus.tophat.cloud/)
+- [Contributing]()
+
+## Author
+```
+todo
+```
