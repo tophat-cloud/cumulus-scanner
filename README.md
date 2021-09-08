@@ -36,7 +36,7 @@ python3 mushroom.py
 
 ## Contents
 - [Cumulus Dashboard](https://cumulus.tophat.cloud/)
-- [Contributing]()
+- [Contributing](https://github.com/tophat-cloud/tophat-cumulus-attack/blob/master/CONTRIBUTING.md)
 
 ## Author
 <p align="center">
