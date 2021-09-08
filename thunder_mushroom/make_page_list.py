@@ -4,12 +4,13 @@ from bs4 import BeautifulSoup
 class make_page:
 
     def __init__(self, url):
+        print("Start make page list => " + url)
         self.base_url = url
         self.list_url = [url]
         webdriver_options = webdriver.ChromeOptions()
         webdriver_options.add_argument('headless')
         webdriver_options.add_argument('disable-gpu')
-        #self.driver = webdriver.Chrome("./chromedriver.exe", options = webdriver_options)
+        # self.driver = webdriver.Chrome("./chromedriver.exe", options = webdriver_options)
         self.driver = webdriver.Chrome("./chromedriver", options = webdriver_options)
         self.find_href(url)
 
