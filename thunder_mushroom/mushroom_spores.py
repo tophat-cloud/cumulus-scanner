@@ -42,14 +42,12 @@ class mushroom_spore:
         for page_html in self.list_of_html_source:
 
             if regex_html.search(page_html):
-                print("a")
                 body = {"thunder_name": "unnecessary comment", "priority": 1,
                         "url": self.list_of_page[self.list_of_html_source.index(page_html)],
                         "project": "KMsB9W4hZCejJ6D1fiESP"}
                 request = requests.post(url="https://api.cumulus.tophat.cloud/thunder/create", json=body)
 
             if regex_javascript.search(page_html):
-                print("a")
                 body = {"thunder_name": "unnecessary comment", "priority": 1,
                         "url": self.list_of_page[self.list_of_html_source.index(page_html)],
                         "project": "KMsB9W4hZCejJ6D1fiESP"}
