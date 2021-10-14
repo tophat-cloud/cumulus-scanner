@@ -2,16 +2,17 @@ from selenium import webdriver
 from make_page_list import make_page
 import re
 import requests
-import directory_travelser
-import check_unnecessary_comment
+from directory_travelser_module import directory_travelser
+from check_unnecessary_comment_module import check_unnecessary_comment
 
 class mushroom_spore:
 
-    def __init__(self, url):
+    def __init__(self, url, project_id):
         if url[-1] == "/":
             self.url = url[:-1]
         else:
             self.url = url
+        self.project_id = project_id
         self.list_of_page = []
         self.list_of_html_source = []
         webdriver_options = webdriver.ChromeOptions()
@@ -35,6 +36,6 @@ class mushroom_spore:
             self.list_of_html_source.append(html_source)
 
     def run_all(self):
-        directory_travelser()
+        directory_travelser(self.project_id, self.url)
         check_unnecessary_comment(self.list_of_page, self.list_of_html_source, self.project_id)
         print("Finish Scan url => " + self.url)

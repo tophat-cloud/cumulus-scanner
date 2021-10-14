@@ -1,5 +1,6 @@
-import request_thunder
+from request_thunder_module import request_thunder
 from selenium import webdriver
+import requests
 
 directory_cheat_sheet = ["%2e%2e%2f", "%2e%2e/", "..%2f", "%2e%2e%5c", "%2e%2e\\", "..%5c", "%252e%252e%255c", "..%255c"]
 
