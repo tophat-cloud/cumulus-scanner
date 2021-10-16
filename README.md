@@ -24,6 +24,7 @@ Run normally:
 
 ```
 #install chrome
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 sudo apt-get update
 sudo apt-get install google-chrome-stable
@@ -31,11 +32,13 @@ sudo apt-get install google-chrome-stable
 git clone https://github.com/tophat-cloud/cumulus-scanner.git
 pip3 install -r requirements.txt
 cd cumulus-scanner/thunder_mushroom
-python3 mushroom.py
+python3 mushroom_test.py -u example.com -o a
 ```
 ## Types of weakness that can be found
 - Check Unnecessary Comment
 - Directory Travelser
+- Guessing admin page
+- Find obfuscation java script
 
 ## Contents
 - [Cumulus Dashboard](https://cumulus.tophat.cloud/)
