@@ -42,6 +42,7 @@ admin_cheat_sheet = [
     "admin_area/",
     "admin_area/login.%EXT%"
 ]
+
 def guessing_admin(project_id, domain, list_of_page):
     global admin_cheat_sheet
     url = domain

@@ -1,5 +1,6 @@
 import re
 from request_thunder_module import request_thunder
+
 unnecessary_comment_regex_list = {
     'html comment':'<!--([^"]*)-->', 'javascript comment':'.?.?.?.?.?.?.?//'
 }
@@ -17,7 +18,7 @@ def check_unnecessary_comment(list_of_page, list_of_html_source, project_id):
     for page_html in list_of_html_source:
         thunder_num = 0
         change_n_to_t = page_html.replace("\n", "\t")
-        body_list = []
+        body = ""
         print("Check unnecessary comment => " + list_of_page[list_of_html_source.index(page_html)])
         for regex in unnecessary_comment_regex_list.keys():
             check_regex = re.compile(unnecessary_comment_regex_list[regex])
@@ -26,7 +27,7 @@ def check_unnecessary_comment(list_of_page, list_of_html_source, project_id):
                 for regex_children in regex_group:
                     thunder_num += 1
                     line_num = fine_line(change_n_to_t, regex_children.start())
-                    body = "Check please "+ str(line_num) +" line \n"
+                    body += "Check please "+ str(line_num) +" line \n"
                     body += "It seems to be " + str(regex) + "\n\n"
         body = "Find "+str(thunder_num)+"unnecessary comments!" + body
         print(body)

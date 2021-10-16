@@ -4,6 +4,7 @@ import re
 import requests
 from directory_travelser_module import directory_travelser
 from check_unnecessary_comment_module import check_unnecessary_comment
+from guessing_admin_module import guessing_admin
 
 class mushroom_spore:
 
@@ -38,4 +39,5 @@ class mushroom_spore:
     def run_all(self):
         directory_travelser(self.project_id, self.url)
         check_unnecessary_comment(self.list_of_page, self.list_of_html_source, self.project_id)
+        guessing_admin(self.project_id, self.url, self.list_of_page)
         print("Finish Scan url => " + self.url)
