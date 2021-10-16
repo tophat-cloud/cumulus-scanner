@@ -11,17 +11,15 @@
   </p>
 </p>
 
-# Cumulus Scanner for Python3
+# Cumulus Scanner
 
-The official Cumulus Scanner for python3
+Web weakness scanner for [cumulus](https://cumulus.tophat.cloud).
 
-## Environment
-    Ubuntu 20.04
-    Python3.8
-## Installation
+also can use as CLI scanner like nikto, sqlmap.
 
-Run normally:
+## Get Started
 
+### Installation
 ```
 #install chrome
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -32,8 +30,27 @@ sudo apt-get install google-chrome-stable
 git clone https://github.com/tophat-cloud/cumulus-scanner.git
 pip3 install -r requirements.txt
 cd cumulus-scanner/thunder_mushroom
+```
+
+### Run
+
+```
 python3 mushroom_test.py -u example.com -o a
 ```
+
+## Usage
+
+```
+    -u, --url # set scan target url
+    
+    -o --options # set all module or single module
+        - a # use all scanner module
+        - c # use check unnecessary comment module
+        - d # use directory travelser module
+        - g # use guessing admin moduel
+        - f # use find obfuscation javascript module
+```
+    
 ## Types of weakness that can be found
 - Check Unnecessary Comment
 - Directory Travelser
@@ -41,7 +58,6 @@ python3 mushroom_test.py -u example.com -o a
 - Find obfuscation java script
 
 ## Contents
-- [Cumulus Dashboard](https://cumulus.tophat.cloud/)
 - [Contributing](https://github.com/tophat-cloud/cumulus-scanner/blob/master/CONTRIBUTING.md)
 
 ## Author
