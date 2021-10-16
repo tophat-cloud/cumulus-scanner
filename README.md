@@ -37,6 +37,8 @@ python3 mushroom.py
 ## Types of weakness that can be found
 - Check Unnecessary Comment
 - Directory Travelser
+- Guessing admin page
+- Find obfuscation java script
 
 ## Contents
 - [Cumulus Dashboard](https://cumulus.tophat.cloud/)
