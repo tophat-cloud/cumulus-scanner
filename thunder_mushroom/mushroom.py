@@ -3,35 +3,39 @@ import requests
 import schedule
 from mushroom_spores import mushroom_spore
 
-url_list = ["http://tophatplayground.wookingwoo.com/"]
-
 def load_url_list():
-    #제작 예정
-    pass
+    re = requests.post("https://api.cumulus.tophat.cloud/project/domains")
+    return re.json
 
 def check_url_list():
     print("Periodic inspection starta at 00:00")
     print("Check url list for mushroom")
-    global url_list
+    url_list = load_url_list()
     tmp = []
-    for url in url_list:
+    for json in url_list:
+        url = json["domain"]
         re = requests.get(url)
         if re.status_code == 200:
-            tmp.append(url)
-    url_list = tmp
-    run()
+            tmp.append(json)
+    run(tmp)
 
-def run():
-    global url_list
+def run(url_list):
     mushroom_list = []
-    for url in url_list:
-
-        mushroom = mushroom_spore(url, "KMsB9W4hZCejJ6D1fiESP", 1)
-        mushroom_list.append(mushroom)
+    for json in url_list:
+        try:
+            url = json["domain"]
+            pdi = json["id"]
+            mushroom = mushroom_spore(url, pdi, 1)
+            mushroom_list.append(mushroom)
+        except:
+            pass
 
     for mushroom in mushroom_list:
-        print("Start Scan for " + mushroom.url)
-        mushroom.run_all()
+        try:
+            print("Start Scan for " + mushroom.url)
+            mushroom.run_all()
+        except:
+            pass
 
 schedule.every().day.at("00:00").do(check_url_list)
 while True:
