@@ -25,25 +25,27 @@ def main(argv):
             body += 'g => use guessing admin moduel\n'
             body += 'f => use find obfuscation javascript module'
             print(FILE_NAME, body)
+            
         elif opt in ("-u", "--url"):
             URL = arg
         elif opt in ("-o", "--options"):
             OPTION_NAME = arg
         
-    if len(URL) < 1 or len(OPTION_NAME) < 1:
-        print(FILE_NAME,'-u, -o option is mandatory')
-        sys.exit(2)
-    mushroom = mushroom_spore(URL)
-    if OPTION_NAME == "a":
-        mushroom.run_all()
-    elif OPTION_NAME == "c":
-        mushroom.check()
-    elif OPTION_NAME == "d":
-        mushroom.directory()
-    elif OPTION_NAME == "g":
-        mushroom.guessing()
-    elif OPTION_NAME == "f":
-        mushroom.find()
+        elif len(URL) < 1 or len(OPTION_NAME) < 1:
+            print(FILE_NAME,'-u, -o option is mandatory')
+            sys.exit(2)
+        else:
+            mushroom = mushroom_spore(URL)
+            if OPTION_NAME == "a":
+                mushroom.run_all()
+            elif OPTION_NAME == "c":
+                mushroom.check()
+            elif OPTION_NAME == "d":
+                mushroom.directory()
+            elif OPTION_NAME == "g":
+                mushroom.guessing()
+            elif OPTION_NAME == "f":
+                mushroom.find()
 
 if __name__ == "__main__":
     main(sys.argv)
