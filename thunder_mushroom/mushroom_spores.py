@@ -5,7 +5,7 @@ import requests
 from directory_travelser_module import directory_travelser
 from check_unnecessary_comment_module import check_unnecessary_comment
 from guessing_admin_module import guessing_admin
-
+from find_obfuscation_javascript_module import find_obfuscation_javascript
 class mushroom_spore:
 
     def __init__(self, url, project_id):
@@ -40,4 +40,5 @@ class mushroom_spore:
         directory_travelser(self.project_id, self.url)
         check_unnecessary_comment(self.list_of_page, self.list_of_html_source, self.project_id)
         guessing_admin(self.project_id, self.url, self.list_of_page)
+        find_obfuscation_javascript(self.project_id, self.list_of_page, self.list_of_html_source)
         print("Finish Scan url => " + self.url)
