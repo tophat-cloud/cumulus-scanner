@@ -43,17 +43,26 @@ admin_cheat_sheet = [
     "admin_area/login.%EXT%"
 ]
 
-def guessing_admin(project_id, domain, list_of_page):
+def guessing_admin(project_id, domain, list_of_page, how):
     global admin_cheat_sheet
+    
+    print("Start guessing admin module")
     url = domain
     find_num = 0
     for admin_cheat in admin_cheat_sheet:
         check_url = url + admin_cheat
         if check_url not in list_of_page:
-            requests_statis_code = requests.get(check_url).status_code
-            if requests_statis_code == 200:
-                find_num +=1
-                body = "Check please " + str(check_url) + " \n"
-                body +="It seems to be admin pages."
-                request_thunder("guessing admin page", project_id, body, check_url, 2)
+            try:
+                requests_statis_code = requests.get(check_url).status_code
+                if requests_statis_code == 200:
+                    find_num +=1
+                    body = "Check please " + str(check_url) + " \n"
+                    body +="It seems to be admin pages."
+                    if how == 1:
+                        request_thunder("guessing admin page", project_id, body, check_url, 2)
+                    else:
+                        print(body)
+            except:
+                pass
     print("Find " + str(find_num)+ " admin pages!")
+    print("Finish guessing admin module")

@@ -8,7 +8,8 @@ from guessing_admin_module import guessing_admin
 from find_obfuscation_javascript_module import find_obfuscation_javascript
 class mushroom_spore:
 
-    def __init__(self, url, project_id):
+    def __init__(self, url, project_id="", how = 0):
+        self.how = how
         if url[-1] == "/":
             self.url = url[:-1]
         else:
@@ -23,6 +24,7 @@ class mushroom_spore:
         self.driver = webdriver.Chrome("./chromedriver", options = webdriver_options) #in linux
         self.page_list(self.url)
         self.make_page_html_source()
+        
 
     def page_list(self, url):
 
@@ -37,8 +39,24 @@ class mushroom_spore:
             self.list_of_html_source.append(html_source)
 
     def run_all(self):
-        directory_travelser(self.project_id, self.url)
-        check_unnecessary_comment(self.list_of_page, self.list_of_html_source, self.project_id)
-        guessing_admin(self.project_id, self.url, self.list_of_page)
-        find_obfuscation_javascript(self.project_id, self.list_of_page, self.list_of_html_source)
+        directory_travelser(self.project_id, self.url, self.how)
+        check_unnecessary_comment(self.list_of_page, self.list_of_html_source, self.project_id, self.how)
+        guessing_admin(self.project_id, self.url, self.list_of_page, self.how)
+        find_obfuscation_javascript(self.project_id, self.list_of_page, self.list_of_html_source, self.how)
+        print("Finish Scan url => " + self.url)
+    
+    def directory(self):
+        directory_travelser(self.project_id, self.url, self.how)
+        print("Finish Scan url => " + self.url)
+
+    def check(self):
+        check_unnecessary_comment(self.list_of_page, self.list_of_html_source, self.project_id, self.how)
+        print("Finish Scan url => " + self.url)
+    
+    def guessing(self):
+        guessing_admin(self.project_id, self.url, self.list_of_page, self.how)
+        print("Finish Scan url => " + self.url)
+
+    def find(self):
+        find_obfuscation_javascript(self.project_id, self.list_of_page, self.list_of_html_source, self.how)
         print("Finish Scan url => " + self.url)
