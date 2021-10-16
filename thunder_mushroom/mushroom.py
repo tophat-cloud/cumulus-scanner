@@ -14,9 +14,12 @@ def check_url_list():
     tmp = []
     for json in url_list:
         url = json["domain"]
-        re = requests.get(url)
-        if re.status_code == 200:
-            tmp.append(json)
+        try:
+            re = requests.get(url)
+            if re.status_code == 200:
+                tmp.append(json)
+        except:
+            pass
     run(tmp)
 
 def run(url_list):
