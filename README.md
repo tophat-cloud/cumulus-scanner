@@ -32,7 +32,7 @@ sudo apt-get install google-chrome-stable
 git clone https://github.com/tophat-cloud/cumulus-scanner.git
 pip3 install -r requirements.txt
 cd cumulus-scanner/thunder_mushroom
-python3 mushroom.py
+python3 mushroom_test.py -u example.com -o a
 ```
 ## Types of weakness that can be found
 - Check Unnecessary Comment
