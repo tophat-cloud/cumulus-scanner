@@ -24,15 +24,28 @@ Let's contribute and be a cumulus family!
 pip install -r requirements.txt
 ```
 
+## Test
+When you need for help
+```
+python3 mushroom.py -h
+```
+
+when you need module check
+```
+python3 mushroom.py -u example.com -o d 
+# a => use all module
+# c => use check unnecessary comment module
+# d => use directory travelser module
+# g => use guessing admin moduel
+# f => use find obfuscation javascript module
+```
 
 
 
 ## Considerations Before Sending Your First PR
-```
-todo 
-```
+When contributing to the codebase, please note:
 
-## Publishing a Release
-```
-todo
-```
+- Non-trivial PRs will not be accepted without tests (see above).
+- Please do not bump version numbers yourself.
+
+
