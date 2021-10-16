@@ -37,6 +37,7 @@ python3 mushroom.py -u example.com -o d
 # c => use check unnecessary comment module
 # d => use directory travelser module
 # g => use guessing admin moduel
+# f => use find obfuscation javascript module
 ```
 
 
