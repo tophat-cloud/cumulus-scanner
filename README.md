@@ -46,16 +46,16 @@ python3 mushroom_test.py -u example.com -o a
     -o --options # set all module or single module
         - a # use all scanner module
         - c # use check unnecessary comment module
-        - d # use directory travelser module
-        - g # use guessing admin moduel
-        - f # use find obfuscation javascript module
+        - d # use directory traversal module
+        - g # use guessing moduele
+        - f # use find unobfuscated code module
 ```
     
 ## Types of weakness that can be found
-- Check Unnecessary Comment
-- Directory Travelser
-- Guessing admin page
-- Find obfuscation java script
+- Unnecessary Comment
+- Directory Traversal
+- Guessing
+- Unobfuscated Code
 
 ## Contents
 - [Contributing](https://github.com/tophat-cloud/cumulus-scanner/blob/master/CONTRIBUTING.md)
