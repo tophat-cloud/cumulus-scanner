@@ -1,6 +1,7 @@
 import time
 import requests
 import schedule
+import traceback
 from mushroom_spores import mushroom_spore
 
 
@@ -24,11 +25,13 @@ def check_url_list():
         url = json["domain"]
         try:
             re = requests.get(url)
+            print(url)
             if re.status_code == 200:
                 tmp.append(json)
         except:
             print("Error in " + str(url))
     run(tmp)
+    print("Finish Scan")
 
 
 def run(url_list):
@@ -41,6 +44,7 @@ def run(url_list):
             mushroom_list.append(mushroom)
         except:
             print("Error in " + str(json))
+            traceback.print_exc()
 
     for mushroom in mushroom_list:
         try:
@@ -50,7 +54,7 @@ def run(url_list):
             pass
 
 
-schedule.every().day.at("21:10").do(check_url_list)
+schedule.every().day.at("21:23").do(check_url_list)
 while True:
     schedule.run_pending()
     time.sleep(1)

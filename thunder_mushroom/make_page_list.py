@@ -16,7 +16,7 @@ class make_page:
 
     def find_href(self, url):
         self.driver.get(url)
-        self.driver.implicitly_wait(3)
+        self.driver.implicitly_wait(20)
         html = self.driver.page_source
         tag = BeautifulSoup(html, "html.parser")
         tag = tag.select("a")
