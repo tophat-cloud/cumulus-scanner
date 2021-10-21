@@ -40,7 +40,9 @@ python3 mushroom.py -u example.com -o d
 # f => use find obfuscation javascript module
 ```
 
-
+## Versioning & Branch
+- We adopt [semver](https://semver.org) as versioning.
+- We adopt Git Flow branch strategy.
 
 ## Considerations Before Sending Your First PR
 When contributing to the codebase, please note:
