@@ -54,7 +54,7 @@ def run(url_list):
             pass
 
 
-schedule.every().day.at("21:23").do(check_url_list)
+schedule.every().day.at("00:00").do(check_url_list)
 while True:
     schedule.run_pending()
     time.sleep(1)
