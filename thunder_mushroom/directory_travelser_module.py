@@ -8,7 +8,7 @@ directory_cheat_sheet = ["%2e%2e%2f", "%2e%2e/",
                          "%252e%252e%255c", "..%255c"
                          ]
 
-def directory_travelser(project_id, domain, how):
+def Directory_Traversal(project_id, domain, how):
     webdriver_options = webdriver.ChromeOptions()
     webdriver_options.add_argument('headless')
     webdriver_options.add_argument('disable-gpu')
@@ -31,7 +31,7 @@ def directory_travelser(project_id, domain, how):
                     body = "Find directory travelser !!\n"
                     body += new_url +"\n"
                     if how ==1:
-                        request_thunder("directory travelser", project_id, body, domain, 3)
+                        request_thunder("Directory Traversal", project_id, body, domain, 2)
                     else:
                         print(body)
-    print("Finish directory travelser module")
+    print("Finish directory traversal module")

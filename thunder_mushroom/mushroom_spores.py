@@ -2,10 +2,11 @@ from selenium import webdriver
 from make_page_list import make_page
 import re
 import requests
-from directory_travelser_module import directory_travelser
-from check_unnecessary_comment_module import check_unnecessary_comment
-from guessing_admin_module import guessing_admin
-from find_obfuscation_javascript_module import find_obfuscation_javascript
+from directory_travelser_module import Directory_Traversal
+from check_unnecessary_comment_module import Unnecessary_Comment
+from guessing_module import Guessing
+from find_unobfuscation_code_module import Unobfuscated_Code
+
 class mushroom_spore:
 
     def __init__(self, url, project_id="", how = 0):
@@ -39,24 +40,24 @@ class mushroom_spore:
             self.list_of_html_source.append(html_source)
 
     def run_all(self):
-        directory_travelser(self.project_id, self.url, self.how)
-        check_unnecessary_comment(self.list_of_page, self.list_of_html_source, self.project_id, self.how)
-        guessing_admin(self.project_id, self.url, self.list_of_page, self.how)
-        find_obfuscation_javascript(self.project_id, self.list_of_page, self.list_of_html_source, self.how)
+        Directory_Traversal(self.project_id, self.url, self.how)
+        Unnecessary_Comment(self.list_of_page, self.list_of_html_source, self.project_id, self.how)
+        Guessing(self.project_id, self.url, self.list_of_page, self.how)
+        Unobfuscated_Code(self.project_id, self.list_of_page, self.list_of_html_source, self.how)
         print("Finish Scan url => " + self.url)
     
     def directory(self):
-        directory_travelser(self.project_id, self.url, self.how)
+        Directory_Traversal(self.project_id, self.url, self.how)
         print("Finish Scan url => " + self.url)
 
     def check(self):
-        check_unnecessary_comment(self.list_of_page, self.list_of_html_source, self.project_id, self.how)
+        Unnecessary_Comment(self.list_of_page, self.list_of_html_source, self.project_id, self.how)
         print("Finish Scan url => " + self.url)
     
     def guessing(self):
-        guessing_admin(self.project_id, self.url, self.list_of_page, self.how)
+        Guessing(self.project_id, self.url, self.list_of_page, self.how)
         print("Finish Scan url => " + self.url)
 
     def find(self):
-        find_obfuscation_javascript(self.project_id, self.list_of_page, self.list_of_html_source, self.how)
+        Unobfuscated_Code(self.project_id, self.list_of_page, self.list_of_html_source, self.how)
         print("Finish Scan url => " + self.url)

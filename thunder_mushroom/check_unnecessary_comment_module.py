@@ -12,7 +12,7 @@ def fine_line(html_text, start_line):
             line_num+=1
     return line_num + 1
 
-def check_unnecessary_comment(list_of_page, list_of_html_source, project_id, how):
+def Unnecessary_Comment(list_of_page, list_of_html_source, project_id, how):
     global unnecessary_comment_regex_list
     print("Start check unnecessary comment")
 
@@ -34,5 +34,5 @@ def check_unnecessary_comment(list_of_page, list_of_html_source, project_id, how
         print(body)
         if thunder_num != 0:
             if how == 1:
-                request_thunder("unnecessary comment", project_id, body, list_of_page[list_of_html_source.index(page_html)], 1)
+                request_thunder("Unnecessary Comment", project_id, body, list_of_page[list_of_html_source.index(page_html)], 3)
     print("Finish check unnecessary comment")

@@ -22,8 +22,8 @@ def main(argv):
             body += 'a => use all module\n'
             body += 'c => use check unnecessary comment module\n'
             body += 'd => use directory travelser module\n'
-            body += 'g => use guessing admin moduel\n'
-            body += 'f => use find obfuscation javascript module'
+            body += 'g => use guessing attack module\n'
+            body += 'f => use find unobfuscation code module'
             print(FILE_NAME, body)
             
         elif opt in ("-u", "--url"):

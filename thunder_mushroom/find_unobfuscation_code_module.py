@@ -1,7 +1,7 @@
 from request_thunder_module import request_thunder
 from bs4 import BeautifulSoup
 
-def find_obfuscation_javascript(project_id, list_of_page, list_of_html_source, how):
+def Unobfuscated_Code(project_id, list_of_page, list_of_html_source, how):
     print("Start find obfuscation java script module")
     for page_html in list_of_html_source:
         java_script = BeautifulSoup(page_html, "lxml")
@@ -17,7 +17,7 @@ def find_obfuscation_javascript(project_id, list_of_page, list_of_html_source, h
                     body += "Check please " +str(num) + "script\n"
                     body += "It seems to be Unobfuscated Java script code\n\n"
         if how == 1:           
-            request_thunder("Unobfuscated Java script", project_id, body, list_of_page[list_of_html_source.index(page_html)], 1)        
+            request_thunder("Unobfuscated Code", project_id, body, list_of_page[list_of_html_source.index(page_html)], 3)
         else:
             print(body)
-    print("Finish find obfuscation java script module")
+    print("Finish find unobfuscation code module")

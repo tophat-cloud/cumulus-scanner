@@ -43,10 +43,10 @@ admin_cheat_sheet = [
     "admin_area/login.%EXT%"
 ]
 
-def guessing_admin(project_id, domain, list_of_page, how):
+def Guessing(project_id, domain, list_of_page, how):
     global admin_cheat_sheet
     
-    print("Start guessing admin module")
+    print("Start guessing attack module")
     url = domain
     find_num = 0
     for admin_cheat in admin_cheat_sheet:
@@ -57,12 +57,12 @@ def guessing_admin(project_id, domain, list_of_page, how):
                 if requests_statis_code == 200:
                     find_num +=1
                     body = "Check please " + str(check_url) + " \n"
-                    body +="It seems to be admin pages."
+                    body +="It seems to be sensitive pages."
                     if how == 1:
-                        request_thunder("guessing admin page", project_id, body, check_url, 2)
+                        request_thunder("Guessing", project_id, body, check_url, 2)
                     else:
                         print(body)
             except:
                 pass
-    print("Find " + str(find_num)+ " admin pages!")
-    print("Finish guessing admin module")
+    print("Find " + str(find_num)+ " sensitive pages!")
+    print("Finish guessing attack module")
