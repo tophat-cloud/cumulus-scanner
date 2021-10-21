@@ -1,4 +1,5 @@
 import requests
+import json
 def request_thunder(thunder_name, project_id, body, url, priority):
     js ={}
     if thunder_name == "Unnecessary Comment":
@@ -31,11 +32,12 @@ def request_thunder(thunder_name, project_id, body, url, priority):
             "suggestion": "The commonly known administrator page is not used."
                           "\nThe administrator's page or sensitive pages allow you to log in.",
             "reference": "https://owasp.org/www-project-web-security-testing-guide/latest/4-Web_Application_Security_Testing/02-Configuration_and_Deployment_Management_Testing/05-Enumerate_Infrastructure_and_Application_Admin_Interfaces"}
+    json_string = json.dumps(js)
     body = {"thunder_name": thunder_name,
             "priority": priority,
             "url": url,
             "project": project_id,
-            "details" : js
+            "details" : json_string
             }
     request = requests.post(url="https://api.cumulus.tophat.cloud/thunder/create", json=body)
 
