@@ -3,15 +3,21 @@ from bs4 import BeautifulSoup
 
 class make_page:
 
-    def __init__(self, url):
+    def __init__(self, url, ostype):
         print("Start make page list => " + url)
         self.base_url = url
         self.list_url = [url]
         webdriver_options = webdriver.ChromeOptions()
         webdriver_options.add_argument('headless')
         webdriver_options.add_argument('disable-gpu')
-        #self.driver = webdriver.Chrome("./chromedriver.exe", options = webdriver_options)
-        self.driver = webdriver.Chrome("./chromedriver", options = webdriver_options)
+        if ostype == "Windows":
+            self.driver = webdriver.Chrome("./chromedriver_win.exe", options=webdriver_options)
+        elif ostype == "Linux":
+            self.driver = webdriver.Chrome("./chromedriver_linux", options = webdriver_options)
+        elif ostype == "Darwin":
+            self.driver = webdriver.Chrome("./chromedriver_mac64", options = webdriver_options)
+        else:
+            self.driver = webdriver.Chrome("./chromedriver_mac_m1", options = webdriver_options)
         self.find_href(url)
 
     def find_href(self, url):

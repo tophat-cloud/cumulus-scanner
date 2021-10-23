@@ -29,7 +29,7 @@ class mushroom_spore:
             self.driver = webdriver.Chrome("./chromedriver_mac64", options = webdriver_options)
         else:
             self.driver = webdriver.Chrome("./chromedriver_mac_m1", options = webdriver_options)
-        self.page_list(self.url)
+        self.page_list(self.url, ostype)
         self.make_page_html_source()
         
 
