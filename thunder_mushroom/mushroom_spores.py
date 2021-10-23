@@ -47,14 +47,14 @@ class mushroom_spore:
             self.list_of_html_source.append(html_source)
 
     def run_all(self):
-        Directory_Traversal(self.project_id, self.url, self.how)
+        Directory_Traversal(self.project_id, self.url, self.how, self.ostype)
         Unnecessary_Comment(self.list_of_page, self.list_of_html_source, self.project_id, self.how)
         Guessing(self.project_id, self.url, self.list_of_page, self.how)
         Unobfuscated_Code(self.project_id, self.list_of_page, self.list_of_html_source, self.how)
         print("Finish Scan url => " + self.url)
     
     def directory(self):
-        Directory_Traversal(self.project_id, self.url, self.how)
+        Directory_Traversal(self.project_id, self.url, self.how, self.ostype)
         print("Finish Scan url => " + self.url)
 
     def check(self):
