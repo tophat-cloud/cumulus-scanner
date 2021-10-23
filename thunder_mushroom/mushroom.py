@@ -3,8 +3,7 @@ import requests
 import schedule
 import traceback
 from mushroom_spores import mushroom_spore
-from slacker import Slacker
-from datetime import datetime
+
 
 def post_message(text):
     url = "" #use your slack webhook url
