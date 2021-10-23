@@ -40,7 +40,7 @@ def run(url_list):
         try:
             url = json["domain"]
             pdi = json["id"]
-            mushroom = mushroom_spore(url, pdi, 1)
+            mushroom = mushroom_spore(url, "Linux", pdi, 1)
             mushroom_list.append(mushroom)
         except:
             print("Error in " + str(json))
