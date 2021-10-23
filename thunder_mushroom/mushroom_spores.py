@@ -18,6 +18,7 @@ class mushroom_spore:
         self.project_id = project_id
         self.list_of_page = []
         self.list_of_html_source = []
+        self.ostype = ostype
         webdriver_options = webdriver.ChromeOptions()
         webdriver_options.add_argument('headless')
         webdriver_options.add_argument('disable-gpu')
@@ -29,13 +30,13 @@ class mushroom_spore:
             self.driver = webdriver.Chrome("./chromedriver_mac64", options = webdriver_options)
         else:
             self.driver = webdriver.Chrome("./chromedriver_mac_m1", options = webdriver_options)
-        self.page_list(self.url, ostype)
+        self.page_list(self.url, self.ostype)
         self.make_page_html_source()
         
 
     def page_list(self, url):
 
-        page_list = make_page(url)
+        page_list = make_page(url, self.ostype)
         self.list_of_page = page_list.get_url_list()
 
     def make_page_html_source(self):
