@@ -13,13 +13,13 @@ def Directory_Traversal(project_id, domain, how, ostype):
     webdriver_options.add_argument('headless')
     webdriver_options.add_argument('disable-gpu')
     if ostype == "Windows":
-        self.driver = webdriver.Chrome("./chromedriver_win.exe", options=webdriver_options)
+        driver = webdriver.Chrome("./chromedriver_win.exe", options=webdriver_options)
     elif ostype == "Linux":
-        self.driver = webdriver.Chrome("./chromedriver_linux", options = webdriver_options)
+        driver = webdriver.Chrome("./chromedriver_linux", options = webdriver_options)
     elif ostype == "Darwin":
-        self.driver = webdriver.Chrome("./chromedriver_mac64", options = webdriver_options)
+        driver = webdriver.Chrome("./chromedriver_mac64", options = webdriver_options)
     else:
-        self.driver = webdriver.Chrome("./chromedriver_mac_m1", options = webdriver_options)
+        driver = webdriver.Chrome("./chromedriver_mac_m1", options = webdriver_options)
     url = domain+"/"
 
     print("Start directory travelser module")
