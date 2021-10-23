@@ -9,7 +9,7 @@ from find_unobfuscation_code_module import Unobfuscated_Code
 
 class mushroom_spore:
 
-    def __init__(self, url, project_id="", how = 0):
+    def __init__(self, url, ostype, project_id="", how = 0):
         self.how = how
         if url[-1] == "/":
             self.url = url[:-1]
@@ -21,8 +21,14 @@ class mushroom_spore:
         webdriver_options = webdriver.ChromeOptions()
         webdriver_options.add_argument('headless')
         webdriver_options.add_argument('disable-gpu')
-        #self.driver = webdriver.Chrome("./chromedriver.exe", options=webdriver_options)  # in win10
-        self.driver = webdriver.Chrome("./chromedriver", options = webdriver_options) #in linux
+        if ostype == "Windows":
+            self.driver = webdriver.Chrome("./chromedriver_win.exe", options=webdriver_options)
+        elif ostype == "Linux":
+            self.driver = webdriver.Chrome("./chromedriver_linux", options = webdriver_options)
+        elif ostype == "Darwin":
+            self.driver = webdriver.Chrome("./chromedriver_mac64", options = webdriver_options)
+        else:
+            self.driver = webdriver.Chrome("./chromedriver_mac_m1", options = webdriver_options)
         self.page_list(self.url)
         self.make_page_html_source()
         

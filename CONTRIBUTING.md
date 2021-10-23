@@ -16,8 +16,9 @@ Let's contribute and be a cumulus family!
 
 ## Environment
 
-- python3.8
-
+- python3.8.3
+- chrome 95.0.4638.54
+- chromedriver 95.0.4638.17
 
 ## Setup
 ```
