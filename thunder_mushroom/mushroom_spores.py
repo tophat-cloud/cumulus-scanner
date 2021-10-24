@@ -11,6 +11,8 @@ class mushroom_spore:
 
     def __init__(self, url, ostype, project_id="", how = 0):
         self.how = how
+        if URL[:7] != "https:/" or URL[:7] != "http://":
+            URL = "http://" +URL
         if url[-1] == "/":
             self.url = url[:-1]
         else:
