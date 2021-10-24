@@ -6,7 +6,7 @@ def Unobfuscated_Code(project_id, list_of_page, list_of_html_source, how):
     for page_html in list_of_html_source:
         java_script = BeautifulSoup(page_html, "lxml")
         java_script = java_script.select("script")
-        body = ""
+        body = "Find in " +str(list_of_page[list_of_html_source.index(page_html)]) +"\n"
         num = 0
         if len(java_script) != 0 :
             
