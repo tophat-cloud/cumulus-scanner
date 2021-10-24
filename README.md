@@ -19,7 +19,7 @@ also can use as CLI scanner like nikto, sqlmap.
 
 ## Get Started
 
-### Installation
+### Installation for linux
 ```
 #install chrome 95.0.4638.54
 #cumulus scanner use chromedriver ver 95.0.4638.17
@@ -29,8 +29,9 @@ sudo apt-get update
 sudo apt-get install google-chrome-stable
 
 git clone https://github.com/tophat-cloud/cumulus-scanner.git
+cd cumulus-scanner
 pip3 install -r requirements.txt
-cd cumulus-scanner/thunder_mushroom
+cd thunder_mushroom
 ```
 
 ### Run
