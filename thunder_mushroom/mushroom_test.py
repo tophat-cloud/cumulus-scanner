@@ -39,7 +39,7 @@ def main(argv):
         what_os = platform.system()
         if what_os == "Darwin":
             while 1:
-                w = input("What is your mac os cpu 1) intel 2) m1 \nPlease choose number:")
+                w = int(input("What is your mac os cpu 1) intel 2) m1 \nPlease choose number:"))
                 if w == 1 or w == 2:
                     break
                 print("Please input just number 1 or 2")
