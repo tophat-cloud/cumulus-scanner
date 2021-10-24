@@ -34,7 +34,7 @@ def Directory_Traversal(project_id, domain, how, ostype):
             if re.status_code == 200:
                 driver.get(new_url)
                 new_code = driver.page_source
-                if new_code != main_code:
+                if new_code != main_code or new_url != url:
                     body = "Find directory travelser !!\n"
                     body += new_url +"\n"
                     if how ==1:
