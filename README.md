@@ -19,6 +19,7 @@ also can use as CLI scanner like nikto, sqlmap.
 
 ## Get Started
 ### Install Chrome
+If you have already chrome skip this part
 ```
 #install chrome 95.0.4638.54
 #cumulus scanner use chromedriver ver 95.0.4638.17
