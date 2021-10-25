@@ -31,6 +31,8 @@ def check_url_list():
     tmp = []
     for json in url_list:
         url = json["domain"]
+        if url[:7] != "https:/" and url[:7] != "http://":
+            url = "http://" + url
         try:
             re = requests.get(url)
             print(url)
