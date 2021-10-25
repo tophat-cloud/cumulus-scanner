@@ -32,7 +32,7 @@ cd cumulus-scanner
 pip3 install -r requirements.txt
 cd thunder_mushroom
 ```
-
+cumulus-scanner works out of the box with Python version 3.x on any platform.
 ### Run
 
 ```
