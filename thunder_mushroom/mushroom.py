@@ -31,16 +31,19 @@ def check_url_list():
     tmp = []
     for json in url_list:
         url = json["domain"]
-        if url[:7] != "https:/" and url[:7] != "http://":
-            url = "http://" + url
-        try:
-            re = requests.get(url)
-            print(url)
-            if re.status_code == 200:
-                tmp.append(json)
-        except:
-            print("Error in " + str(url))
-            post_message("Error in " + str(url))
+        if url == None:
+            pass
+        else:
+            if url[:7] != "https:/" and url[:7] != "http://":
+                url = "http://" + url
+            try:
+                re = requests.get(url)
+                print(url)
+                if re.status_code == 200:
+                    tmp.append(json)
+            except:
+                print("Error in " + str(url))
+                post_message("Error in " + str(url))
     run(tmp)
     print("Finish Scan")
     post_message("Finish Scan")
