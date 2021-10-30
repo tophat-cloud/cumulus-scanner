@@ -26,6 +26,13 @@ If you have already chrome skip this part
 https://support.google.com/chrome/answer/95346?hl=ko&co=GENIE.Platform%3DDesktop
 ```
 ### Installation 
+
+```
+git clone https://github.com/tophat-cloud/cumulus-scanner.git
+cd cumulus-scanner
+pip3 install -r requirements.txt
+cd thunder_mushroom
+```
 Give the chromedriver the executive authority according to your os.
 Chromedriver is in cumulus-scanner/thunder_mushroom folder
 ```
@@ -34,12 +41,6 @@ chmod 555 chromedriver_mac_m1
 chmod 555 chromedriver_linux
 ```
 
-```
-git clone https://github.com/tophat-cloud/cumulus-scanner.git
-cd cumulus-scanner
-pip3 install -r requirements.txt
-cd thunder_mushroom
-```
 
 cumulus-scanner works out of the box with Python version 3.x on any platform.
 ### Run
