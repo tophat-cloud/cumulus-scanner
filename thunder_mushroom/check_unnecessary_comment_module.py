@@ -2,7 +2,7 @@ import re
 from request_thunder_module import request_thunder
 
 unnecessary_comment_regex_list = {
-    'html comment':'<!--([^"]*)-->', 'javascript comment':'.?.?.?.?.?.?.?//'
+    'html comment':'<!--([^"]*)-->'
 }
 
 def fine_line(html_text, start_line):
@@ -15,10 +15,11 @@ def fine_line(html_text, start_line):
 def Unnecessary_Comment(list_of_page, list_of_html_source, project_id, how):
     global unnecessary_comment_regex_list
     print("Start check unnecessary comment")
-
+    
     for page_html in list_of_html_source:
         thunder_num = 0
-        change_n_to_t = page_html.replace("\n", "\t")
+        change_n_to_t = page_html.replace("<!DOCTYPE html>", "")
+        change_n_to_t = change_n_to_t.replace("\n", "\t")
         body = ""
         print("Check unnecessary comment => " + list_of_page[list_of_html_source.index(page_html)])
         for regex in unnecessary_comment_regex_list.keys():
