@@ -45,8 +45,7 @@ def main(argv):
                 print("Please input just number 1 or 2")
             if w == 2:
                 what_os == "m1"
-        if URL[:7] != "https:/" or URL[:7] != "http://":
-            URL = "http://" +URL
+        
         mushroom = mushroom_spore(URL, what_os)
         if OPTION_NAME == "a":
             mushroom.run_all()
