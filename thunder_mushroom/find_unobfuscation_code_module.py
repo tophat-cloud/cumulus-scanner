@@ -13,7 +13,7 @@ def Unobfuscated_Code(project_id, list_of_page, list_of_html_source, how):
             for script in java_script:
                 num += 1
                 val = str(script).find("\n")
-                if val == -1 or val == 0:
+                if val != -1 and val != 0:
                     body += "Check please " +str(num) + "script\n"
                     body += "It seems to be Unobfuscated Java script code\n\n"
         if how == 1:           
